@@ -32,4 +32,14 @@ These values come from `python -m gw_inference_engine.pipeline --mass-1 36 --mas
 
 The source tree preserves the production pipeline boundaries while keeping the first executable example dependency-light and fully deterministic.
 
+## Validation and reproducibility
+
+```bash
+python -m gw_inference_engine.pipeline --mass-1 36 --mass-2 29 --seed 2
+python -m compileall -q src
+pytest
+```
+
+`tests/test_pipeline.py` verifies deterministic output, a nonzero demonstration SNR, and an internally ordered posterior interval. GitHub Actions installs the optional development dependency set and executes the test suite on every push and pull request.
+
 This scaffold separates waveform, detector, search, inference, and post-merger packages so real GWOSC, LALSuite, PyCBC, dynesty, NumPyro, SXS, and ligo.skymap integrations can be added without changing the public workflow. The present signal model is educational and must not be used for scientific claims.
