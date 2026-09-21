@@ -12,10 +12,12 @@ def inspiral(duration: float, sample_rate: int, mass_1: float, mass_2: float) ->
     samples = int(duration * sample_rate)
     mc = chirp_mass(mass_1, mass_2)
     series = []
+    phase = 0.0
     for index in range(samples):
-        remaining = max((samples - index) / sample_rate, 1 / sample_rate)
-        frequency = min(20 + 16 * mc * remaining ** (-3 / 8), sample_rate / 3)
-        phase = 2 * math.pi * frequency * index / sample_rate
-        amplitude = 0.05 * (1 - index / samples) ** -0.25
+        progress = index / max(samples - 1, 1)
+        final_frequency = min(35 + 2.8 * mc, sample_rate * 0.42)
+        frequency = 20 + (final_frequency - 20) * progress**2
+        phase += 2 * math.pi * frequency / sample_rate
+        amplitude = 0.025 + 0.16 * progress**2
         series.append(amplitude * math.sin(phase))
     return series
