@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600">
+<rect width="960" height="600" rx="18" fill="#070b18"/>
+<text x="52" y="48" fill="#f8fafc" font-family="Segoe UI, sans-serif" font-size="25" font-weight="700">Template-bank response</text>
+<text x="52" y="75" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="14">27 templates • peak response should track the injected chirp mass</text>
+<line x1="80" y1="455" x2="890" y2="455" stroke="#475569"/>
+<line x1="80" y1="130" x2="80" y2="455" stroke="#475569"/>
+<line x1="458.2" y1="130" x2="458.2" y2="455" stroke="#f472b6" stroke-width="2" stroke-dasharray="7 7"/>
+<polyline points="80.0,455.0 111.2,349.9 142.3,436.0 173.5,453.3 204.6,377.6 235.8,359.6 266.9,449.0 298.1,428.3 329.2,423.0 360.4,364.4 391.5,416.0 422.7,130.0 453.8,130.0 485.0,130.0 516.2,130.0 547.3,130.0 578.5,130.0 609.6,130.0 640.8,130.0 671.9,130.0 703.1,130.0 734.2,130.0 765.4,130.0 796.5,130.0 827.7,130.0 858.8,130.0 890.0,130.0" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linejoin="round"/>
+<text x="466.2" y="150" fill="#f9a8d4" font-family="Segoe UI, sans-serif" font-size="13">injected chirp mass</text>
+<text x="485" y="520" text-anchor="middle" fill="#94a3b8" font-family="Segoe UI, sans-serif" font-size="14">template chirp mass (solar-mass units)</text>
+</svg>

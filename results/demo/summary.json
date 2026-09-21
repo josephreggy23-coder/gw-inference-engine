@@ -1,0 +1,19 @@
+{
+  "seed": 2,
+  "component_masses": [
+    36,
+    29
+  ],
+  "injected_chirp_mass": 28.0956,
+  "recovered_template_chirp_mass": 26.12,
+  "absolute_recovery_error": 1.9756,
+  "matched_filter_like_score": 1.4806,
+  "posterior_style_interval": [
+    19.37,
+    32.87
+  ],
+  "sample_rate_hz": 256,
+  "duration_s": 2.0,
+  "samples": 512,
+  "template_count": 27
+}
