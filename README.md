@@ -29,6 +29,7 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev]"
 python -m gw_inference_engine.pipeline --mass-1 36 --mass-2 29 --seed 2
+python -m gw_inference_engine.report --mass-1 36 --mass-2 29 --seed 2
 pytest
 ```
 
@@ -45,7 +46,7 @@ On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1
 Example output from the verified run:
 
 ```text
-{'injected_chirp_mass': 28.1, 'snr': 1.41, 'posterior': PosteriorSummary(chirp_mass=8, lower_90=0.89, upper_90=15.11)}
+{'injected_chirp_mass': 28.1, 'snr': 1.48, 'posterior': PosteriorSummary(chirp_mass=26.12, lower_90=19.37, upper_90=32.87)}
 ```
 
 The interval shown above belongs to the teaching approximation. It should not be compared with a published LIGO/Virgo/KAGRA posterior.
@@ -58,9 +59,31 @@ The interval shown above belongs to the teaching approximation. It should not be
 | Sampling rate | 256 Hz (512 samples) |
 | Injected chirp mass | 28.10 solar masses |
 | Template bank | 27 equal-mass templates |
-| Demonstration matched-filter SNR | 1.41 |
+| Recovered template chirp mass | 26.12 solar masses |
+| Absolute recovery error | 1.98 solar masses |
+| Demonstration matched-filter-like score | 1.48 |
 
 These values come from `python -m gw_inference_engine.pipeline --mass-1 36 --mass-2 29 --seed 2`. They are baseline diagnostics for a deterministic teaching model, not a calibrated astrophysical recovery or a claim about real detector data.
+
+## Reproducible benchmark results
+
+The committed benchmark is an actual deterministic run of the current signal model: component masses `(36, 29)`, injected chirp mass `28.0956`, `512` strain samples, and `27` templates. The best template recovered chirp mass `26.12`, an absolute error of `1.9756`, while the posterior-style interval covered the injected value.
+
+![Injected waveform over deterministic noisy strain](results/demo/strain_recovery.svg)
+
+![Template-bank response across chirp mass](results/demo/template_response.svg)
+
+Every plotted point is available in machine-readable form:
+
+- [`strain_timeseries.csv`](results/demo/strain_timeseries.csv): timestamps, injected waveform, and noisy strain
+- [`template_scores.csv`](results/demo/template_scores.csv): response score for all 27 templates
+- [`summary.json`](results/demo/summary.json): injection settings and recovery metrics
+
+Regenerate every artifact with:
+
+```bash
+python -m gw_inference_engine.report --mass-1 36 --mass-2 29 --seed 2 --output results/demo
+```
 
 ## What is implemented today
 
@@ -94,12 +117,14 @@ The reported `snr` is therefore a convenient deterministic score, not the PSD-we
 | `search.py` | Template scoring and best-template selection |
 | `inference.py` | Posterior summary data model and interval calculation |
 | `pipeline.py` | Template-bank construction, orchestration, and CLI |
+| `report.py` | Time-series/score export, recovery metrics, and SVG charts |
 | `tests/test_pipeline.py` | Determinism, signal-score, and interval-order checks |
 
 ## Validation and reproducibility
 
 ```bash
 python -m gw_inference_engine.pipeline --mass-1 36 --mass-2 29 --seed 2
+python -m gw_inference_engine.report --mass-1 36 --mass-2 29 --seed 2
 python -m compileall -q src
 pytest
 ```
