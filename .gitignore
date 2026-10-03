@@ -4,3 +4,6 @@ __pycache__/
 *.py[cod]
 catalogs/cache/
 training/checkpoints/
+.DS_Store
+.idea/
+.vscode/
