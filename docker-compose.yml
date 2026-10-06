@@ -3,4 +3,4 @@ services:
     image: python:3.12-slim
     working_dir: /app
     volumes: [".:/app"]
-    command: python -m gw_inference_engine.pipeline
+    command: bash -c "pip install -e . && python -m gw_inference_engine.pipeline"
