@@ -2,6 +2,10 @@ __pycache__/
 .pytest_cache/
 .venv/
 *.py[cod]
+*.egg-info/
+*.egg
+dist/
+build/
 catalogs/cache/
 training/checkpoints/
 .DS_Store
