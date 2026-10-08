@@ -14,3 +14,5 @@ training/checkpoints/
 .mypy_cache/
 .coverage
 htmlcov/
+.ipynb_checkpoints/
+.ruff_cache/
