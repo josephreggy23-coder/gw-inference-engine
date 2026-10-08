@@ -16,3 +16,5 @@ training/checkpoints/
 htmlcov/
 .ipynb_checkpoints/
 .ruff_cache/
+venv/
+Thumbs.db
