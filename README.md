@@ -119,6 +119,7 @@ The reported `snr` is therefore a convenient deterministic score, not the PSD-we
 | `pipeline.py` | Template-bank construction, orchestration, and CLI |
 | `report.py` | Time-series/score export, recovery metrics, and SVG charts |
 | `tests/test_pipeline.py` | Determinism, signal-score, and interval-order checks |
+| `tests/test_report.py` | Report data-export and chart-writing check |
 
 ## Validation and reproducibility
 
