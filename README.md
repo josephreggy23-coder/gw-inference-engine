@@ -156,6 +156,7 @@ pytest
 - `catalogs/`: reserved GWOSC metadata, strain cache, and injection sets
 - `benchmarks/`: reserved accuracy and recovery studies
 - `notebooks/`: reserved event-analysis tutorials
+- `results/demo/`: committed benchmark CSV, JSON, and SVG artifacts
 - `tests/`: deterministic regression tests
 
 This scaffold separates waveform, detector, search, inference, and post-merger packages so real GWOSC, LALSuite, PyCBC, dynesty, NumPyro, SXS, and ligo.skymap integrations can be added without changing the public workflow. The present signal model is educational and must not be used for scientific claims.
