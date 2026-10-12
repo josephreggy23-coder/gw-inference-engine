@@ -20,3 +20,5 @@ coverage.xml
 .ruff_cache/
 venv/
 Thumbs.db
+.tox/
+.nox/
