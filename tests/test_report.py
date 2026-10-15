@@ -8,4 +8,3 @@ def test_report_writes_data_and_charts(tmp_path):
     assert summary["absolute_recovery_error"] < 5
     assert (tmp_path / "strain_recovery.svg").exists()
     assert (tmp_path / "template_scores.csv").exists()
-
