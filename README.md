@@ -130,7 +130,7 @@ python -m compileall -q src
 pytest
 ```
 
-`tests/test_pipeline.py` verifies deterministic output, a nonzero demonstration SNR, and an internally ordered posterior interval. GitHub Actions installs the optional development dependency set and executes the test suite on every push and pull request.
+`tests/test_pipeline.py` verifies deterministic output, a nonzero demonstration SNR, and an internally ordered posterior interval. `tests/test_report.py` checks that report generation writes the CSV and SVG artifacts. GitHub Actions installs the optional development dependency set and executes the test suite on every push and pull request.
 
 ## Current limitations
 
