@@ -22,3 +22,5 @@ venv/
 Thumbs.db
 .tox/
 .nox/
+*.log
+.eggs/
