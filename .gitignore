@@ -24,3 +24,5 @@ Thumbs.db
 .nox/
 *.log
 .eggs/
+*.swp
+*~
