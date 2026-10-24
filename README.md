@@ -43,11 +43,23 @@ On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1
 
 ### Command-line options
 
+`gw_inference_engine.pipeline` accepts:
+
 | Option | Default | Purpose |
 | --- | ---: | --- |
 | `--mass-1` | `36` | Primary component mass in solar-mass units |
 | `--mass-2` | `29` | Secondary component mass in solar-mass units |
 | `--seed` | `0` | Seed controlling the synthetic detector noise |
+
+`gw_inference_engine.report` takes the same masses but defaults to the
+committed benchmark seed and adds an output directory:
+
+| Option | Default | Purpose |
+| --- | ---: | --- |
+| `--mass-1` | `36` | Primary component mass in solar-mass units |
+| `--mass-2` | `29` | Secondary component mass in solar-mass units |
+| `--seed` | `2` | Seed controlling the synthetic detector noise |
+| `--output` | `results/demo` | Directory for the CSV, JSON, and SVG artifacts |
 
 Example output from the verified run:
 
