@@ -1,5 +1,7 @@
 # gw-inference-engine
 
+[![CI](https://github.com/josephreggy23-coder/gw-inference-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/josephreggy23-coder/gw-inference-engine/actions/workflows/ci.yml)
+
 A lightweight gravitational-wave inference teaching pipeline. It synthesizes compact-binary chirps, injects them into deterministic Gaussian detector noise, calculates matched-filter-like SNR, and estimates a posterior-like mass range from a small template bank.
 
 ## Why this project exists
