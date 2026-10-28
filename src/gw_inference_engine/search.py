@@ -4,6 +4,7 @@ import math
 
 
 def snr(data: list[float], template: list[float]) -> float:
+    """Return the matched-filter score of ``data`` against a unit-normalised ``template``."""
     numerator = sum(datum * model for datum, model in zip(data, template))
     norm = math.sqrt(sum(model * model for model in template))
     return numerator / max(norm, 1e-12)
