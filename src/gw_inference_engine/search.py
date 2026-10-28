@@ -11,4 +11,5 @@ def snr(data: list[float], template: list[float]) -> float:
 
 
 def best_template(data: list[float], templates: dict[float, list[float]]) -> tuple[float, float]:
+    """Return ``(chirp_mass, score)`` for the template with the highest SNR."""
     return max(((mass, snr(data, waveform)) for mass, waveform in templates.items()), key=lambda result: result[1])
