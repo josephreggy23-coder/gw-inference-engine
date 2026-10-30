@@ -41,6 +41,8 @@ pytest
 
 On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1`.
 
+To run the demo in a container instead, use `docker compose up inference`.
+
 ### Command-line options
 
 `gw_inference_engine.pipeline` accepts:
