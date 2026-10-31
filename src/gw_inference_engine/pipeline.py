@@ -20,9 +20,9 @@ def run(mass_1: float = 36, mass_2: float = 29, seed: int = 0) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run an educational compact-binary recovery.")
-    parser.add_argument("--mass-1", type=float, default=36)
-    parser.add_argument("--mass-2", type=float, default=29)
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--mass-1", type=float, default=36, help="primary component mass (solar masses)")
+    parser.add_argument("--mass-2", type=float, default=29, help="secondary component mass (solar masses)")
+    parser.add_argument("--seed", type=int, default=0, help="seed for the synthetic detector noise")
     args = parser.parse_args()
     print(run(args.mass_1, args.mass_2, args.seed))
 
