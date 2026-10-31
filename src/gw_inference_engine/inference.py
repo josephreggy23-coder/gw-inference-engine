@@ -11,5 +11,6 @@ class PosteriorSummary:
 
 
 def summarize(best_mass: float, matched_snr: float) -> PosteriorSummary:
+    """Return a teaching interval centred on ``best_mass`` whose half-width shrinks as the score grows."""
     width = max(0.5, 10 / max(matched_snr, 1))
     return PosteriorSummary(best_mass, round(best_mass - width, 2), round(best_mass + width, 2))
