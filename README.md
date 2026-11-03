@@ -130,6 +130,8 @@ The reported `snr` is therefore a convenient deterministic score, not the PSD-we
 
 ## Module guide
 
+Source modules live in `src/gw_inference_engine/`; tests live in `tests/`.
+
 | Module | Responsibility |
 | --- | --- |
 | `waveforms.py` | Chirp-mass calculation and synthetic inspiral generation |
