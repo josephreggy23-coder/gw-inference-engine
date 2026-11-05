@@ -4,6 +4,7 @@ import math
 
 
 def chirp_mass(mass_1: float, mass_2: float) -> float:
+    """Return the chirp mass of a binary with component masses ``mass_1`` and ``mass_2``."""
     return (mass_1 * mass_2) ** (3 / 5) / (mass_1 + mass_2) ** (1 / 5)
 
 

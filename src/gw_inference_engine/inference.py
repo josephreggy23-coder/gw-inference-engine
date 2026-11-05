@@ -5,6 +5,8 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class PosteriorSummary:
+    """Point estimate and 90% teaching interval for the recovered chirp mass."""
+
     chirp_mass: float
     lower_90: float
     upper_90: float
