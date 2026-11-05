@@ -9,6 +9,7 @@ from .waveforms import chirp_mass, inspiral
 
 
 def run(mass_1: float = 36, mass_2: float = 29, seed: int = 0) -> dict:
+    """Inject a chirp into seeded noise and recover its chirp mass from the template bank."""
     duration, sample_rate = 2.0, 256
     signal = inspiral(duration, sample_rate, mass_1, mass_2)
     data = inject(signal, seed)
@@ -19,6 +20,7 @@ def run(mass_1: float = 36, mass_2: float = 29, seed: int = 0) -> dict:
 
 
 def main() -> None:
+    """Command-line entry point: run the demo recovery and print the summary."""
     parser = argparse.ArgumentParser(description="Run an educational compact-binary recovery.")
     parser.add_argument("--mass-1", type=float, default=36, help="primary component mass (solar masses)")
     parser.add_argument("--mass-2", type=float, default=29, help="secondary component mass (solar masses)")
