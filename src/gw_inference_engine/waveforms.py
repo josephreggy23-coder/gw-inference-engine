@@ -9,7 +9,7 @@ def chirp_mass(mass_1: float, mass_2: float) -> float:
 
 
 def inspiral(duration: float, sample_rate: int, mass_1: float, mass_2: float) -> list[float]:
-    """A compact, non-calibrated chirp suitable only for pipeline tests."""
+    """Return a compact, non-calibrated chirp suitable only for pipeline tests."""
     samples = int(duration * sample_rate)
     mc = chirp_mass(mass_1, mass_2)
     series = []
