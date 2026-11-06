@@ -54,6 +54,7 @@ def _score_chart(scores: list[tuple[float, float]], injected: float) -> str:
 
 
 def build_report(output_dir: Path, mass_1: float = 36, mass_2: float = 29, seed: int = 2) -> dict:
+    """Run the demo injection and write CSV, JSON, and SVG artifacts to ``output_dir``."""
     output_dir.mkdir(parents=True, exist_ok=True)
     duration, sample_rate = 2.0, 256
     signal = inspiral(duration, sample_rate, mass_1, mass_2)
@@ -96,6 +97,7 @@ def build_report(output_dir: Path, mass_1: float = 36, mass_2: float = 29, seed:
 
 
 def main() -> None:
+    """Parse CLI arguments and generate the benchmark report."""
     parser = argparse.ArgumentParser(description="Generate GW benchmark data and charts.")
     parser.add_argument("--output", type=Path, default=Path("results/demo"))
     parser.add_argument("--mass-1", type=float, default=36)
