@@ -1,3 +1,5 @@
+"""End-to-end demo: inject a chirp, search the template bank, summarize."""
+
 from __future__ import annotations
 
 import argparse

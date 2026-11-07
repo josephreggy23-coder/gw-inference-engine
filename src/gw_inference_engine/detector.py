@@ -1,3 +1,5 @@
+"""Synthetic detector noise injection."""
+
 from __future__ import annotations
 
 import random

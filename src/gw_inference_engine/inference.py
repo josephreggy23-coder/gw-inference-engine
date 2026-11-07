@@ -1,3 +1,5 @@
+"""Posterior-style summaries of the recovered chirp mass."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass

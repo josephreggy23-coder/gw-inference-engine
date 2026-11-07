@@ -1,3 +1,5 @@
+"""Matched-filter scoring and template-bank search."""
+
 from __future__ import annotations
 
 import math

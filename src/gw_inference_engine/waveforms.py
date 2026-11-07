@@ -1,3 +1,5 @@
+"""Chirp-mass calculation and toy inspiral waveforms."""
+
 from __future__ import annotations
 
 import math
