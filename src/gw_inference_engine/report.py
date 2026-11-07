@@ -1,3 +1,5 @@
+"""Benchmark report generation: CSV, JSON, and SVG artifacts."""
+
 from __future__ import annotations
 
 import argparse
@@ -99,10 +101,10 @@ def build_report(output_dir: Path, mass_1: float = 36, mass_2: float = 29, seed:
 def main() -> None:
     """Parse CLI arguments and generate the benchmark report."""
     parser = argparse.ArgumentParser(description="Generate GW benchmark data and charts.")
-    parser.add_argument("--output", type=Path, default=Path("results/demo"))
-    parser.add_argument("--mass-1", type=float, default=36)
-    parser.add_argument("--mass-2", type=float, default=29)
-    parser.add_argument("--seed", type=int, default=2)
+    parser.add_argument("--output", type=Path, default=Path("results/demo"), help="directory for the CSV, JSON, and SVG artifacts")
+    parser.add_argument("--mass-1", type=float, default=36, help="primary component mass (solar masses)")
+    parser.add_argument("--mass-2", type=float, default=29, help="secondary component mass (solar masses)")
+    parser.add_argument("--seed", type=int, default=2, help="seed for the synthetic detector noise (2 matches the committed benchmark)")
     args = parser.parse_args()
     print(json.dumps(build_report(args.output, args.mass_1, args.mass_2, args.seed), indent=2))
 
