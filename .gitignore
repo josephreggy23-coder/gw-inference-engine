@@ -27,3 +27,8 @@ Thumbs.db
 *.swp
 *~
 .env.*
+
+# Test and type-checker caches
+.hypothesis/
+.dmypy.json
+desktop.ini
