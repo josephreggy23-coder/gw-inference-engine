@@ -183,4 +183,4 @@ pytest
 - `pyproject.toml`: package metadata and the optional `dev` dependency set
 - `docker-compose.yml`: containerized `inference` demo service
 
-This scaffold separates waveform, detector, search, inference, and post-merger packages so real GWOSC, LALSuite, PyCBC, dynesty, NumPyro, SXS, and ligo.skymap integrations can be added without changing the public workflow. The present signal model is educational and must not be used for scientific claims.
+This scaffold separates waveform, detector, search, inference, and reporting modules so real GWOSC, LALSuite, PyCBC, dynesty, NumPyro, SXS, and ligo.skymap integrations can be added without changing the public workflow. The present signal model is educational and must not be used for scientific claims.
